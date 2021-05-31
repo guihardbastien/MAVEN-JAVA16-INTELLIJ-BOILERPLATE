@@ -1,14 +1,26 @@
-# Java-boilerplate
-
+# Java 16 boilerplate
  ## Overview
+TBA
  ### Directory structure
  ```bash
-TBA
+.
+├── main
+    └── java
+        └── fr
+            └── guihardbastien
+                └── boilerplate
+                    ├── Main.java
+                    ├── VectorComputation.java
+                    └── VectorComputationBenchMark.java
+
  ```
 
  ## How to use 
  ```bash
-TBA
+cd ./maven-loom-intellij-boilerplate
+mvn clean install
+cd ./lab1/target
+java -jar ./benchmarks.jar
  ```
  ## Useful commands
 TBA
