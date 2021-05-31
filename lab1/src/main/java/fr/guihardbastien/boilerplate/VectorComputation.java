@@ -41,49 +41,5 @@ public class VectorComputation {
 
         return sum + sumMask;
     }
-
-    public static int min(int[] array) {
-        //TOTO
-        var length = array.length;
-        var loopBound = length - length % SPECIES.length();
-
-        var v0 = IntVector.zero(SPECIES); //fixme
-
-        var i = 0;
-        for (; i < loopBound; i += SPECIES.length()) {
-            var v = IntVector.fromArray(SPECIES, array, i);
-            v0.min(v);
-        }
-        int min = v0.reduceLanes(VectorOperators.MIN);
-
-        for (; i < length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-
-        return min;
-    }
-
-    public static int minMask(int[] array) {
-        //TODO
-        var length = array.length;
-        var loopBound = length - length % SPECIES.length();
-
-        var v0 = IntVector.zero(SPECIES); //fixme
-
-        var i = 0;
-        for (; i < loopBound; i += SPECIES.length()) {
-            var v = IntVector.fromArray(SPECIES, array, i);
-            v0.min(v);
-        }
-        int min = v0.reduceLanes(VectorOperators.MIN);
-
-        var mask = SPECIES.indexInRange(i, length);
-        var vMask = IntVector.fromArray(SPECIES, array, i, mask);
-        int minMask = vMask.reduceLanes(VectorOperators.MIN);
-
-        return min + minMask;
-    }
 }
 

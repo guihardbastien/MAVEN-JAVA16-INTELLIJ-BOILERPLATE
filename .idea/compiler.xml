@@ -22,6 +22,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="boilerplate-java" options="" />
       <module name="lab1" options="--add-modules jdk.incubator.vector" />
     </option>
   </component>
